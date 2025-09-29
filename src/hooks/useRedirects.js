@@ -1,8 +1,7 @@
 /* eslint-disable no-undef */
 
-
-import { useState, useEffect } from 'react';
-import { getRedirects, clearRedirects } from '../utils/chromeAPI';
+import { useState, useEffect } from "react";
+import { getRedirects, clearRedirects } from "../utils/chromeAPI";
 
 export const useRedirects = () => {
   const [redirects, setRedirects] = useState([]);
@@ -17,7 +16,7 @@ export const useRedirects = () => {
         setRedirects(data.redirects || []);
         setError(null);
       } catch (err) {
-        setError('Failed to fetch data');
+        setError("Failed to fetch data");
         console.error(err);
       } finally {
         setLoading(false);
@@ -26,7 +25,7 @@ export const useRedirects = () => {
 
     fetchData();
 
-    // ✅ Chrome storage change listener with guard
+    //  Chrome storage change listener with guard
     let handleStorageChange;
     if (typeof chrome !== "undefined" && chrome.storage?.onChanged) {
       handleStorageChange = (changes) => {
@@ -50,23 +49,17 @@ export const useRedirects = () => {
     };
   }, []);
 
-  // const refresh = async () => {
-  //   const data = await getRedirects();
-  //   setRedirects(data.redirects || []);
-  // };
-
-
-const refresh = async () => {
+ 
+  const refresh = async () => {
     try {
       console.log("refreshed btn clicked");
       const data = await getRedirects();
-console.log("Data received:", data);
+      console.log("Data received:", data);
       setRedirects(data.redirects || []);
     } catch (err) {
       console.error("Failed to fetch redirects:", err);
     }
   };
-
 
   const clear = async () => {
     await clearRedirects();

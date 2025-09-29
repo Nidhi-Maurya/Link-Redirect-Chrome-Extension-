@@ -1,6 +1,7 @@
 /* eslint-disable no-undef */
 // /* eslint-disable no-undef */
-// // Install/Update listener - Badge set karo welcome ke liye (red dot dikhega)
+// // /* eslint-disable no-undef */
+
 chrome.runtime.onInstalled.addListener((details) => {
   if (details.reason === 'install' || details.reason === 'update') {
     console.log('Extension installed/updated!'); // Debug log
@@ -10,10 +11,10 @@ chrome.runtime.onInstalled.addListener((details) => {
   }
 });
 
-// // Redirect chains track karne ke liye variables
- let redirectChains = new Map(); // tabId -> array of chain steps
+// // // Redirect chains track karne ke liye variables
+  let redirectChains = new Map(); // tabId -> array of chain steps
 
-// // Better redirect tracking: Headers received pe status code capture karo
+// // // Better redirect tracking: Headers received pe status code capture karo
 chrome.webRequest.onHeadersReceived.addListener(
   (details) => {
     const tabId = details.tabId;

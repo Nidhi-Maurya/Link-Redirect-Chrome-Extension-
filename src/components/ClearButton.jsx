@@ -8,7 +8,7 @@ const ClearButton = () => {
   return (
     <button
       onClick={clear}
-      className="w-full bg-red-500 hover:bg-red-600 text-white py-2 px-4 rounded-md transition-colors md:w-auto"
+      className="w-full bg-red-500 hover:bg-red-600 text-white py-2 px-4 rounded-md transition-colors md:w-auto  font-bold cursor-pointer "
     >
       Clear All Tracks
     </button>

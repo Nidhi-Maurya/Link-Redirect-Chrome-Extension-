@@ -43,11 +43,7 @@ function App() {
         <div className="mt-4">
           <ClearButton />
         </div>
-      )}
-
-      <p className="text-xs text-gray-500 text-center mt-4">
-        Tip: Open https://httpbin.org/redirect/2 to test!
-      </p>
+      )}  
     </div>
   );
 }
