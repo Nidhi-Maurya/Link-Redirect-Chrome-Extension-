@@ -3,7 +3,13 @@
   "name": "Link Redirect Tracker",
   "version": "1.0.0",
   "description": "Tracks link redirects with status codes and chains.",
-  "permissions": ["webRequest", "storage", "tabs"],
+ "permissions": [
+    "storage",
+    "tabs",
+    "scripting",
+    "webRequest",
+    "webRequestBlocking"
+  ],
   "host_permissions": ["<all_urls>"],
   "background": {
     "service_worker": "background.js"
@@ -12,10 +18,7 @@
     "default_popup": "index.html",
     "default_title": "Redirect Tracker"
   },
-  "icons": {
-    "16": "icn-16.jpg"
-    
-  },
+  
   "content_security_policy": {
     "extension_pages": "script-src 'self'; object-src 'self'"
   }

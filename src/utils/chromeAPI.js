@@ -20,7 +20,7 @@ export const clearRedirects = async () => {
     if (isChrome) {
       chrome.runtime.sendMessage({ action: "clear" }, resolve);
     } else {
-      // Dev fallback
+      
       localStorage.removeItem("redirects");
       resolve();
     }

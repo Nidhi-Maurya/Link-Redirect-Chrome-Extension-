@@ -12,7 +12,7 @@ const RedirectList = ({ redirects, loading, error }) => {
           <div className="flex justify-between items-center mb-1">
             <span className="text-xs font-medium text-gray-700">Step {index + 1}</span>
             <span className={`px-2 py-1 rounded text-xs ${
-              step.statusCode >= 300 && step.statusCode < 400 
+              step.statusCode >= 300 && step.statusCode < 400
                 ? 'bg-yellow-100 text-yellow-800' 
                 : 'bg-green-200 text-green-800'
             }`}>
